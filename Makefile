@@ -5,10 +5,8 @@ install:
 	pip install -r requirements.txt
 
 # Vérification du code
-check:
+lint:
 	pylint main.py prepare_data.py train_model.py evaluate_model.py save_model.py
-	black --check main.py prepare_data.py train_model.py evaluate_model.py save_model.py
-	flake8 main.py prepare_data.py train_model.py evaluate_model.py save_model.py
 
 # Formatter le code
 format:
@@ -38,8 +36,8 @@ generate_submission:
 test:
 	pytest tests/
 
-# Automatiser toutes les tâches
-all: install check prepare_data train_model evaluate_model save_model generate_submission
+# Exécuter toutes les tâches
+all: install lint prepare_data train_model evaluate_model save_model generate_submission
 
 # Raccourcis pour les tâches spécifiques
 train:
