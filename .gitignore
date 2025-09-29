@@ -1,0 +1,13 @@
+# .gitignore
+.venv/
+__pycache__/
+*.pyc
+*.log
+*.csv
+model.pkl
+submission.csv
+.ipynb_checkpoints/
+Untitled.ipynb
+titanic-data-science-solutions.ipynb
+titanic-data-science-solutions.ipynb:Zone.Identifier
+
