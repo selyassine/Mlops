@@ -55,7 +55,7 @@ def save_model_if_needed(model):
 
 
 def generate_submission_if_needed(model, test_clean):
-    """
+    """ 
     Génère la soumission si nécessaire.
     """
     if test_clean is None:
