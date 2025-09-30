@@ -2,7 +2,12 @@ name: ML Pipeline CI
 
 on:
   push:
-    branches: [ main ]
+    paths:
+      - '**/*.py'       # Tous les fichiers Python
+      - 'Makefile'      # Le fichier Makefile
+      - 'data/**'       # Tous les fichiers dans le dossier data
+      - 'tests/**'      # Tous les fichiers dans le dossier tests
+    branches: [ main ]  # Seulement pour la branche main
 
 jobs:
   build-and-test:
