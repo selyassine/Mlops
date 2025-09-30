@@ -7,7 +7,7 @@ import pandas as pd
 from prepare_data import prepare_data
 from train_model import train_model
 from evaluate_model import evaluate_model
-from save_model import save_model 
+from save_model import save_model
 
 
 def prepare_data_if_needed(train_clean, test_clean):
@@ -55,7 +55,7 @@ def save_model_if_needed(model):
 
 
 def generate_submission_if_needed(model, test_clean):
-    """ 
+    """
     Génère la soumission si nécessaire.
     """
     if test_clean is None:
