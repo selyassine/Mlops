@@ -1,5 +1,5 @@
 """
-Ce module contient le pipeline principal du projet Titanic.
+Ce module contient le pipeline principal du projet Titanic .
 """
 
 import argparse
