@@ -12,6 +12,9 @@ on:
 jobs:
   build-test-push:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write          # indispensable pour pousser sur GHCR
 
     steps:
       - uses: actions/checkout@v4
@@ -48,7 +51,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          push: false
+          push: true                                 # ← push activé
           tags: |
             ghcr.io/${{ github.repository_owner }}/titanic:${{ github.sha }}
             ghcr.io/${{ github.repository_owner }}/titanic:latest
@@ -56,4 +59,4 @@ jobs:
       - name: Trigger Jenkins
         run: |
           curl -X POST ${{ secrets.JENKINS_WEBHOOK }} \
-            --data-urlencode "IMAGE_TAG=${{ github.sha }}"
+            --data-urlencode "IMAGE_TAG=ghcr.io/${{ github.repository_owner }}/titanic:${{ github.sha }}"
