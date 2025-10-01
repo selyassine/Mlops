@@ -56,5 +56,4 @@ jobs:
       - name: Trigger Jenkins
         run: |
           curl -X POST ${{ secrets.JENKINS_WEBHOOK }} \
-            --data-urlencode "token=${{ secrets.JENKINS_TOKEN }}" \
             --data-urlencode "IMAGE_TAG=${{ github.sha }}"
