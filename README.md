@@ -2,6 +2,8 @@
 
 **Un modèle de classification (Random Forest, jeu Kaggle Titanic) réentraîné, testé, conteneurisé et exécuté automatiquement à chaque `git push`, avec des outils libres et sans service cloud payant.**
 
+> **In English.** An end-to-end MLOps pipeline: on every `git push`, GitHub Actions lints and tests the code, builds a Docker image and pushes it to GHCR, then a webhook triggers Jenkins, which runs a Prefect flow (prepare, train, evaluate, save, submit) and archives the artefacts. The model is a deliberately simple Random Forest on the Kaggle Titanic dataset: the point is the automation chain, not the score. Personal learning project; documentation is in French.
+
 [![ML Pipeline CI](https://github.com/selyassine/Mlops/actions/workflows/ci.yml/badge.svg)](https://github.com/selyassine/Mlops/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-GHCR-2496ED?logo=docker&logoColor=white)
