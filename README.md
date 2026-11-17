@@ -41,6 +41,14 @@ GitHub Actions ── lint (pylint) ── tests (pytest)  ── build de l'ima
 | Déploiement continu | Jenkins | déclenché par webhook, exécute le flow dans le conteneur |
 | Orchestration | Prefect | tâches avec réessais, suivi des exécutions dans l'interface |
 
+## Aperçu
+
+| Étapes du pipeline | Tests | Workflow GitHub Actions |
+| :-: | :-: | :-: |
+| <img src="docs/apercu/pipeline.png" alt="Exécution des cinq étapes du pipeline, accuracy 0,87" width="100%"> | <img src="docs/apercu/tests.png" alt="Cinq tests pytest réussis" width="100%"> | <img src="docs/apercu/ci_github_actions.png" alt="Extrait du workflow .github/workflows/ci.yml" width="100%"> |
+
+<sub>Sorties réelles de <code>python main.py</code> et <code>pytest</code> ; le workflow est un extrait de <code>.github/workflows/ci.yml</code>.</sub>
+
 ## Lancer en local
 
 ```bash
